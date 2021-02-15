@@ -16,6 +16,9 @@ import yuri_galdino_tp1.Yuri_Galdino_TP1;
  */
 public class Menu {
 
+    //Output variable
+    static int choiceApproved;
+
     public static int menu() {
         System.out.println("[1] Registrar as notas de um novo aluno.\n"
                 + "[2] Consultar boletim de um aluno.\n"
@@ -23,26 +26,25 @@ public class Menu {
                 + "[4] Sair.");
         System.out.println("Digite escolha abaixo ↓");
 
-        //Output variable
-        int choiceApproved = 0;
-
         try ( Scanner input = new Scanner(System.in)) {
+
             //Try/Catch to check if the input is int
             try {
                 int choice = input.nextInt();
-
+                //Check if the input is a valid number.
                 if (choice > 4 || choice < 1) {
+                    System.out.println("ERRO: O número digitado não é válido.");
                     redoMenuChoice();
 
                 } else {
                     //Pass checked value to output variable "choiceApproved"
                     choiceApproved = choice;
                 }
-
+                //Catch error when its not a number
             } catch (InputMismatchException err) {
+                System.out.println("ERRO: Esta entrada só aceita números inteiros.");
                 redoMenuChoice();
             }
-            input.close();
         }
 
         return choiceApproved;
@@ -53,7 +55,7 @@ public class Menu {
 
         //Thread.sleep for 2.4 seconds
         try {
-            Thread.sleep(2400);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             // this part is executed when an exception (in this example InterruptedException) occurs
         }
@@ -78,8 +80,7 @@ public class Menu {
 //        System.out.println("\nObrigado por utilizar nosso sistema.\n");
 //        break;
 //    }
-          //If/Else way
-          System.out.println("choice = "+choice);
+        //If/Else way
         if (choice == 1) {
             Service.studentGradeRegister();
         } else if (choice == 2) {
