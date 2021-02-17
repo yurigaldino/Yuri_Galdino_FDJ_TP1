@@ -55,7 +55,7 @@ public class Menu {
 
         //Thread.sleep for 2.4 seconds
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             // this part is executed when an exception (in this example InterruptedException) occurs
         }
@@ -64,34 +64,19 @@ public class Menu {
         //Yuri_Galdino_TP1.main(new String[0]);
     }
 
-    public static void handleMenuChoice(int choice) {
-        //Switch/Case way
-//        switch (choice) {
-//      case 1:
-//        Service.studentGradeRegister();
-//        break;
-//      case 2:
-//        //Service.studentCheckReport();
-//        break;
-//      case 3:
-//        //Service.classCheckGrades();
-//        break;
-//      case 4:
-//        System.out.println("\nObrigado por utilizar nosso sistema.\n");
-//        break;
+//    public static void handleMenuChoice(int choice) {
+//    //If/Else way
+//        if (choice == 1) {
+//            Service.studentGradeRegister();
+//        } else if (choice == 2) {
+//            //studentCheckReport();
+//        } else if (choice == 3) {
+//            //classCheckGrades();
+//        } else if (choice == 4) {
+//            System.out.println("\nObrigado por utilizar nosso sistema.\n");
+//        } else {
+//            System.out.println("\nPor favor, escolha novamente\n");
+//            menu();
+//        }
 //    }
-        //If/Else way
-        if (choice == 1) {
-            Service.studentGradeRegister();
-        } else if (choice == 2) {
-            //studentCheckReport();
-        } else if (choice == 3) {
-            //classCheckGrades();
-        } else if (choice == 4) {
-            System.out.println("\nObrigado por utilizar nosso sistema.\n");
-        } else {
-            System.out.println("\nPor favor, escolha novamente\n");
-            menu();
-        }
-    }
 }
