@@ -20,13 +20,15 @@ public class Menu {
     static int choiceApproved;
 
     public static int menu() {
+        System.out.println("\n-----------------------\nSistema de notas INFNET\n-----------------------\nMENU:\n");
+        
         System.out.println("[1] Registrar as notas de um novo aluno.\n"
                 + "[2] Consultar boletim de um aluno.\n"
                 + "[3] Consultar notas da turma.\n"
                 + "[4] Sair.");
         System.out.println("Digite escolha abaixo ↓");
 
-        try ( Scanner input = new Scanner(System.in)) {
+        Scanner input = new Scanner(System.in);
 
             //Try/Catch to check if the input is int
             try {
@@ -45,7 +47,7 @@ public class Menu {
                 System.out.println("ERRO: Esta entrada só aceita números inteiros.");
                 redoMenuChoice();
             }
-        }
+        
 
         return choiceApproved;
     }
