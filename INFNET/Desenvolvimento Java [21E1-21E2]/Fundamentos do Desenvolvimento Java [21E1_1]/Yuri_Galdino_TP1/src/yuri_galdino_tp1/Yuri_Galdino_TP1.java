@@ -24,6 +24,24 @@ public class Yuri_Galdino_TP1 {
         return o.getClass().getSimpleName();
     }
 
+    public static double round1(double value) {
+        return Math.round(value * 10d) / 10d;
+
+    }
+
+    public static double round2(double value, int places) {
+        double scale = Math.pow(10, places);
+        return Math.round(value * scale) / scale;
+    }
+    
+//    public static double round3(double value, int places) {
+//        return DoubleRounder.round(value, places);
+//    }
+
+
+    public static double doubleWith1Decimals(double d) {
+        return Math.floor(d * 1e1) / 1e1;
+    }
 //    public static String readString(String message) {
 //        String result = "";
 //
@@ -38,19 +56,18 @@ public class Yuri_Galdino_TP1 {
 //        }
 //        return result;
 //    }
-
 //    public static float readFloat(String message) {
 //        Scanner scan = Yuri_Galdino_TP1.scan;
 //        System.out.println(message);
 //        return scan.nextFloat();
 //    }
     //Funções do programa
+
     public static void main(String[] args) {
 
         //Programa
         //Primeira tentativa dividindo em classes
         //Menu.handleMenuChoice(Menu.menu());
-        
         int choice = Menu.menu();
 
         //If/Else way
@@ -59,12 +76,12 @@ public class Yuri_Galdino_TP1 {
         } else if (choice == 2) {
             Service.studentCheckReport();
         } else if (choice == 3) {
-            //classCheckGrades();
+            Service.classCheckGrades();
         } else if (choice == 4) {
             System.out.println("\nObrigado por utilizar nosso sistema.\n");
             System.exit(0);
         }
-        
+
         //Teste de função
 //        String nome = readString("Nome ↓");
     }
